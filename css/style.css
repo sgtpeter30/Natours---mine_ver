@@ -1,0 +1,550 @@
+/* line 1, sass/layout/_header.scss */
+.header {
+  position: relative;
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* clip-path: polygon(0 0, 100% 50%, 0 100%); */ }
+  /* line 22, sass/layout/_header.scss */
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  /* line 28, sass/layout/_header.scss */
+  .header__logo {
+    height: 35px; }
+  /* line 31, sass/layout/_header.scss */
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    translate: -50% -50%;
+    /* transform: translate(-50%, -50%); */
+    text-align: center; }
+
+/* line 1, sass/layout/_grid.scss */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 114rem;
+  margin: auto; }
+
+/* line 7, sass/layout/_grid.scss */
+[class^=col] {
+  display: flex;
+  padding: 0 1.5rem; }
+
+/* line 11, sass/layout/_grid.scss */
+.col-4 {
+  width: 33.3334%; }
+
+/* line 1, sass/base/_base.scss */
+:root {
+  font-size: 10px;
+  /* font-size: 62.5%; */ }
+
+/* line 6, sass/base/_base.scss */
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+/* line 12, sass/base/_base.scss */
+body {
+  box-sizing: border-box; }
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(2rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-2rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+/* line 1, sass/base/_typography.scss */
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+
+/* line 10, sass/base/_typography.scss */
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  /* line 15, sass/base/_typography.scss */
+  .heading-primary--main, .heading-primary--sub {
+    display: block; }
+  /* line 18, sass/base/_typography.scss */
+  .heading-primary--main {
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 2s;
+    animation-timing-function: ease-out; }
+  /* line 27, sass/base/_typography.scss */
+  .heading-primary--sub {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 2s ease-out; }
+
+/* line 35, sass/base/_typography.scss */
+.heading-secondary {
+  display: inline-block;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: all .2s;
+  letter-spacing: 2px; }
+  /* line 47, sass/base/_typography.scss */
+  .heading-secondary:hover {
+    transform: skew(15deg, 2deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+/* line 52, sass/base/_typography.scss */
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+/* line 58, sass/base/_typography.scss */
+.paragraph {
+  font-size: 1.6rem; }
+  /* line 60, sass/base/_typography.scss */
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
+
+/* line 1, sass/base/_utilities.scss */
+.u-center-text {
+  text-align: center; }
+
+/* line 4, sass/base/_utilities.scss */
+.u-margin-bottom-big {
+  margin-bottom: 8rem; }
+
+/* line 7, sass/base/_utilities.scss */
+.u-margin-bottom-medium {
+  margin-bottom: 4rem; }
+
+/* line 10, sass/base/_utilities.scss */
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem; }
+
+/* line 14, sass/base/_utilities.scss */
+.u-margin-top-big {
+  margin-top: 8rem; }
+
+/* line 1, sass/components/_bg-video.scss */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .15; }
+  /* line 10, sass/components/_bg-video.scss */
+  .bg-video .--content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+
+/* line 2, sass/components/_button.scss */
+.btn:link, .btn:visited {
+  position: relative;
+  display: inline-block;
+  padding: 1.5rem 4rem;
+  border-radius: 5rem;
+  transition: all .2s;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.6rem; }
+
+/* line 12, sass/components/_button.scss */
+.btn:hover {
+  translate: 0 -3px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+/* line 16, sass/components/_button.scss */
+.btn:active {
+  translate: 0 -1px;
+  box-shadow: 0 5px 1rem rgba(0, 0, 0, 0.2); }
+
+/* line 20, sass/components/_button.scss */
+.btn::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  border-radius: 10rem;
+  transition: all .4s; }
+
+/* line 32, sass/components/_button.scss */
+.btn:hover::after {
+  scale: 1.4 1.6;
+  opacity: 0; }
+
+/* line 36, sass/components/_button.scss */
+.btn--white {
+  background-color: #fff;
+  color: #777; }
+  /* line 39, sass/components/_button.scss */
+  .btn--white::after {
+    background-color: #fff; }
+
+/* line 43, sass/components/_button.scss */
+.btn--green {
+  background-color: #55c57a;
+  color: #fff; }
+  /* line 46, sass/components/_button.scss */
+  .btn--green::after {
+    background-color: #55c57a; }
+
+/* line 50, sass/components/_button.scss */
+.btn--animated {
+  animation: moveInUp 2s ease-out .75s;
+  animation-fill-mode: backwards; }
+
+/* line 56, sass/components/_button.scss */
+.btn-text:link, .btn-text:visited {
+  color: #55c57a;
+  position: relative;
+  display: inline-block;
+  padding: 3px;
+  border-bottom: 1px solid #55c57a;
+  font-size: 1.6rem;
+  text-decoration: none; }
+
+/* line 65, sass/components/_button.scss */
+.btn-text:hover, .btn-text:active {
+  background-color: #55c57a;
+  color: #fff;
+  translate: 0 -3px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15); }
+
+/* line 71, sass/components/_button.scss */
+.btn-text:active {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  translate: 0 0; }
+
+/* line 1, sass/components/_card.scss */
+.card {
+  position: relative;
+  perspective: 150rem;
+  width: 100%;
+  height: 52rem; }
+  /* line 8, sass/components/_card.scss */
+  .card__side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 52rem;
+    width: 100%;
+    transition: all .8s ease;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+    /* line 20, sass/components/_card.scss */
+    .card__side.--front {
+      background-color: #fff; }
+    /* line 23, sass/components/_card.scss */
+    .card__side.--back {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+      transform: rotateY(180deg); }
+      /* line 26, sass/components/_card.scss */
+      .card__side.--back.second {
+        background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+      /* line 29, sass/components/_card.scss */
+      .card__side.--back.third {
+        background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+  /* line 35, sass/components/_card.scss */
+  .card:hover .card__side.--front {
+    transform: rotateY(-180deg); }
+  /* line 38, sass/components/_card.scss */
+  .card:hover .card__side.--back {
+    transform: rotateY(0deg); }
+  /* line 43, sass/components/_card.scss */
+  .card__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+    /* line 50, sass/components/_card.scss */
+    .card__picture.--picture-1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url("../img/nat-5.jpg"); }
+    /* line 53, sass/components/_card.scss */
+    .card__picture.--picture-2 {
+      background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url("../img/nat-6.jpg"); }
+    /* line 56, sass/components/_card.scss */
+    .card__picture.--picture-3 {
+      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url("../img/nat-7.jpg"); }
+  /* line 62, sass/components/_card.scss */
+  .card__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: white;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%; }
+  /* line 73, sass/components/_card.scss */
+  .card__heading-span {
+    padding: 1rem 1.5rem;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone; }
+    /* line 79, sass/components/_card.scss */
+    .card__heading-span.--span-1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+    /* line 86, sass/components/_card.scss */
+    .card__heading-span.--span-2 {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
+    /* line 93, sass/components/_card.scss */
+    .card__heading-span.--span-3 {
+      background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
+  /* line 104, sass/components/_card.scss */
+  .card__details {
+    padding: 3rem; }
+    /* line 107, sass/components/_card.scss */
+    .card__details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; }
+      /* line 112, sass/components/_card.scss */
+      .card__details ul li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem; }
+        /* line 117, sass/components/_card.scss */
+        .card__details ul li:not(:last-child) {
+          border-bottom: 1px solid #eee; }
+  /* line 124, sass/components/_card.scss */
+  .card__cta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100%; }
+    /* line 136, sass/components/_card.scss */
+    .card__cta .price-box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: auto;
+      width: 100%;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 8rem; }
+      /* line 145, sass/components/_card.scss */
+      .card__cta .price-box .--only {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        flex-basis: 100%; }
+      /* line 150, sass/components/_card.scss */
+      .card__cta .price-box .--value {
+        font-size: 6rem;
+        font-weight: 100; }
+
+/* line 1, sass/components/_composition.scss */
+.composition {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+  height: 0; }
+  /* line 8, sass/components/_composition.scss */
+  .composition .--photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    transition: all .2s;
+    z-index: 10;
+    outline-offset: 2rem; }
+    /* line 17, sass/components/_composition.scss */
+    .composition .--photo.--p1 {
+      left: 0;
+      top: -2rem; }
+    /* line 22, sass/components/_composition.scss */
+    .composition .--photo.--p2 {
+      right: 0;
+      top: 2rem; }
+    /* line 27, sass/components/_composition.scss */
+    .composition .--photo.--p3 {
+      left: 20%;
+      top: 10rem; }
+    /* line 31, sass/components/_composition.scss */
+    .composition .--photo:hover {
+      outline: 1.5rem solid #55c57a;
+      scale: 1.05;
+      translate: 0 -.5rem;
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+      z-index: 11; }
+  /* line 40, sass/components/_composition.scss */
+  .composition:hover .--photo:not(:hover) {
+    scale: 0.95; }
+
+/* line 1, sass/components/_feature-box.scss */
+.feature-box-wrapper {
+  width: 25%;
+  padding: 0 3rem; }
+  /* line 5, sass/components/_feature-box.scss */
+  .feature-box-wrapper .feature-box {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 1.5rem;
+    padding: 2.5rem;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+    transition: all .3s; }
+    /* line 15, sass/components/_feature-box.scss */
+    .feature-box-wrapper .feature-box:hover {
+      translate: 0 -1.5rem;
+      scale: 1.03; }
+    /* line 20, sass/components/_feature-box.scss */
+    .feature-box-wrapper .feature-box .--icon {
+      font-size: 6rem;
+      margin-bottom: .5rem;
+      background-image: linear-gradient(to right, #7ed56f, #28b485);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent; }
+
+/* line 1, sass/components/_story.scss */
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+  transform: skewX(-12deg); }
+  /* line 14, sass/components/_story.scss */
+  .story:hover .story__caption {
+    translate: -50% -50%;
+    opacity: 1 !important; }
+  /* line 18, sass/components/_story.scss */
+  .story:hover .story__img {
+    scale: 1;
+    filter: blur(3px) brightness(80%); }
+  /* line 24, sass/components/_story.scss */
+  .story > * {
+    transform: skewX(12deg); }
+  /* line 28, sass/components/_story.scss */
+  .story__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    translate: -3rem 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  /* line 41, sass/components/_story.scss */
+  .story__img {
+    height: 100%;
+    scale: 1.4;
+    transition: all .5s; }
+  /* line 48, sass/components/_story.scss */
+  .story__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% 20%;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    transition: all .5s;
+    opacity: 0;
+    backface-visibility: hidden; }
+
+/* line 2, sass/pages/_home.scss */
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh; }
+  /* line 6, sass/pages/_home.scss */
+  .section-about .main-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 114rem;
+    margin: auto; }
+    /* line 11, sass/pages/_home.scss */
+    .section-about .main-wrapper .--text,
+    .section-about .main-wrapper .--images {
+      display: flex;
+      flex-wrap: wrap;
+      width: 50%; }
+
+/* line 19, sass/pages/_home.scss */
+.section-features {
+  margin-top: -12rem;
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../img/nat-4.jpg);
+  background-size: cover;
+  transform: skewY(-5.8deg); }
+  /* line 31, sass/pages/_home.scss */
+  .section-features > * {
+    transform: skewY(5.8deg); }
+
+/* line 35, sass/pages/_home.scss */
+.section-tours {
+  background-color: #f7f7f7;
+  padding: 25rem 0 15rem 0;
+  margin-top: -10rem; }
+  /* line 39, sass/pages/_home.scss */
+  .section-tours .main-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 114rem;
+    margin: auto; }
+
+/* line 46, sass/pages/_home.scss */
+.section-stories {
+  position: relative;
+  padding: 15rem 0; }

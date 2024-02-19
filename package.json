@@ -1,0 +1,20 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Landing page for natours",
+  "main": "test.js",
+  "scripts": {
+    "sass": "node-sass sass/main.scss css/style.css -watch",
+    "browsersync": "browser-sync start --server --files \"css/*.css\"",
+    "start": "npm-run-all --parallel sass browsersync"
+  },
+  "author": "Piotr",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^8.0.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.29.1",
+    "npm-run-all": "^4.1.1"
+  }
+}

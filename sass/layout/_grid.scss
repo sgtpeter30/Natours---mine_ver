@@ -1,0 +1,13 @@
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 114rem;
+  margin: auto;
+}
+[class^=col]{
+  display: flex;
+  padding: 0 1.5rem
+}
+.col-4{
+  width: 33.3334%;
+}
